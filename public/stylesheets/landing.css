@@ -1,0 +1,161 @@
+/* global */
+@media all and (max-width: 768px){
+  body, header, .nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .brand {
+    text-align: center;
+    margin: 2rem 2rem;
+    font-size: 20px;
+  }
+  .nav-link{
+    width: 100%;
+    height: 50px;
+    line-height: 32px;
+    text-align: center;
+    border: .5px dashed #E5301C;
+  }
+  .nav-container {
+    width: 100%;
+  }
+  section {
+    width: 50rem;
+    height: 22rem;
+  }
+  .bread-link {
+    font-size: 12px;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica";
+}
+
+header {
+  font-family: "Inconsolata";
+  font-weight: lighter;
+  letter-spacing: 1.3px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1.5rem;
+  align-items: baseline;
+  margin: 0.5rem 0;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header .brand {
+  font-family: 'Helvetica';
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+header .nav-link {
+  padding: 10px;
+  background-color: black;
+  color: #fff;
+}
+
+header .nav-link:hover {
+  background-color: yellow;
+  color: #000;
+  transition: 0.3s ease-in-out;
+}
+/* crumb menu */
+
+.crumb-container {
+  padding-top: 4rem;
+  margin: 3.5rem 6rem;
+  display: flex;
+}
+
+.bread-link {
+  padding: 1.5rem;
+  justify-content: space-evenly;
+}
+
+.bread-link a:hover {
+  background-color: yellow;
+  color: #000;
+  transition: 0.3s ease-in-out;
+}
+
+.bread-link a {
+  text-decoration: none;
+  font-size: 24px;
+  font-family: 'Inconsolata';
+  color: #fff;
+  padding: 2rem;
+  background-color: #000;
+}
+
+.breadcrumbs {
+  text-decoration: line-through;
+}
+
+/* landing */
+
+ul {
+margin-top: 100px;
+padding: 0;
+}
+
+.year {
+  list-style: none;
+}
+
+.year a {
+  text-decoration: none;
+}
+
+h2 {
+ font-family: "Helvetica";
+ font-size: 35px;
+ text-align: center;
+ color: black;
+ line-height: 100px;
+ height: 100px;
+ position: relative;
+}
+
+/* landing bg */
+ h2[class='2015']:hover {
+  background-image: url("../assets/banners/2.jpg");
+  color: white;
+  font-size: 48px;
+  height: 30%;
+}
+
+h2[class='2016']:hover {
+  background-image: url("../assets/banners/4.jpg");
+  color: white;
+  font-size: 48px;
+  height: 30%;
+}
+
+h2[class='2017']:hover {
+  background-image: url("../assets/2017/2017-23.jpg");
+  color: white;
+  font-size: 48px;
+  height: 30%;
+}
+h2[class='2018']:hover {
+  background-image: url("../assets/banners/1.jpg");
+  font-size: 48px;
+  color: white;
+  height: 30%;

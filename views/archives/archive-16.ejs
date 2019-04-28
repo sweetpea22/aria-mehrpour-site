@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+<div class="crumb-container">
+  <div class="bread-link">
+    <a href="/2015">archive 2015</a>
+  </div>
+  <div class="bread-link breadcrumbs">
+    <a href="/2016">archive 2016</a>
+  </div>
+  <div class="bread-link">
+    <a href="/2017">archive 2017</a>
+  </div>
+  <div class="bread-link">
+    <a href="/2018">archive 2018</a>
+  </div>
+</div>
+  <div class="container">
+ <% const images = [
+      {img: '/assets/2016/2016-1.jpg'},
+      {img: '/assets/2016/2016-2.jpg'},
+      {img: '/assets/2016/2016-3.jpg'},
+      {img: '/assets/2016/2016-4.jpg'},
+      {img: '/assets/2016/2016-5.jpg'},
+      {img: '/assets/2016/2016-6.jpg'},
+      {img: '/assets/2016/2016-7.jpg'},
+      {img: '/assets/2016/2016-8.jpg'},
+      {img: '/assets/2016/2016-9.jpg'},
+      {img: '/assets/2016/2016-10.jpg'},
+      {img: '/assets/2016/2016-11.jpg'},
+      {img: '/assets/2016/2016-12.jpg'},
+      {img: '/assets/2016/2016-13.jpg'},
+      {img: '/assets/2016/2016-14.jpg'},
+      {img: '/assets/2016/2016-15.jpg'},
+      {img: '/assets/2016/2016-16.jpg'},
+      {img: '/assets/2016/2016-17.jpg'}
+    ] %>
+    <% for (var i = 0; i < images.length; i++) {%>
+      <img src="<%=images[i].img%>">
+    <% } %>
+  </div>
+
+<% include ../partials/footer %>

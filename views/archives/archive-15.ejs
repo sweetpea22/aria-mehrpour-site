@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+<link href="https://fonts.googleapis.com/css?family=Archivo+Black|Harmattan" rel="stylesheet">
+<div class="crumb-container">
+  <div class="bread-link breadcrumbs">
+    <a href="/2015">archive 2015</a>
+  </div>
+  <div class="bread-link">
+    <a href="/2016">archive 2016</a>
+  </div>
+  <div class="bread-link">
+    <a href="/2017">archive 2017</a>
+  </div>
+  <div class="bread-link">
+    <a href="/2018">archive 2018</a>
+  </div>
+</div>
+
+  <div class="container">
+ <%  const images = [
+      {img: '/assets/2015/2015-1.jpg'},
+      {img: '/assets/2015/2015-2.jpg'},
+      {img: '/assets/2015/2015-4.jpg'},
+      {img: '/assets/2015/2015-5.jpg'},
+      {img: '/assets/2015/2015-6.jpg'},
+      {img: '/assets/2015/2015-7.jpg'}
+    ] %>
+    <% for (var i = 0; i < images.length; i++) {%>
+      <img src="<%=images[i].img%>">
+    <% } %>
+  </div>
+
+<% include ../partials/footer %>

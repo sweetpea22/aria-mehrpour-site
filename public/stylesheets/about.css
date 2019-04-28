@@ -1,0 +1,29 @@
+body {
+  font-family: "Harmattan", sans-serif;
+  font-size: 18px;
+  font-weight: lighter;
+  background-color: #1B1A1A;
+}
+
+div.about {
+  display: flex;
+  justify-content: column;
+  padding: 10rem;
+}
+
+img {
+  position: absolute;
+}
+
+div.text {
+  position: relative;
+  z-index: 2;
+  left: 24%;
+}
+div.text p {
+  letter-spacing: 0.2px;
+  line-height: 1.4rem;
+  font-size: 1.4rem;
+  padding: 3rem;
+  color: #d1d1d1;
+}
