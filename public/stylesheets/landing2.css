@@ -1,0 +1,99 @@
+a {
+  text-decoration: none;
+}
+
+figcaption {
+  display: none;
+  font-family: "Work Sans", sans-serif;
+  font-size: 72px;
+  color: #333;
+  position: relative;
+  margin-left: 10rem;
+  z-index: 200;
+}
+
+div:hover figcaption {
+  display: inline;
+}
+
+div img {
+  position: absolute;
+  width: 550px;
+  transition: 0.3s ease-in-out;
+  filter: grayscale(100%);
+
+}
+
+.a-18 img {
+  left: 8%;
+  top: 20%;
+  z-index: 4;
+}
+
+img:hover {
+  filter: none;
+  transform: translateY(10px);
+  z-index: 500;
+}
+
+.a-17 img {
+  top: 80%;
+  left: 25%;
+}
+.a-17 h2:hover {
+  display: block;
+}
+
+.a-16 img {
+  bottom: 18%;
+  right: 10%;
+}
+
+.a-15 img {
+  top: 600px;
+  right: 6.5%;
+  width: auto;
+  height: 500px;
+}
+
+.a-14 img {
+  left: 6%;
+  top: 860px;
+}
+
+.a-13 img {
+  top: 1000px;
+  left: 44%;
+}
+
+.a-12 img {
+  top: 1270px;
+  left: 7%;
+}
+
+.a-11 img {
+  top: 1420px;
+  right: 7%;
+}
+
+.btm-panel {
+  height: 400px;
+  width: 100%;
+  margin-top: 1rem;
+  background-color: black;
+  position: absolute;
+  top: 1900px;
+}
+
+.btm-panel p {
+  font-family: "Inconsolata", sans-serif;
+  font-size: 16px;
+  font-weight: lighter;
+  color: white;
+  margin: 4rem 3rem;
+}
+
+.btm-panel a {
+  text-decoration: none;
+  color: yellow;
+}
