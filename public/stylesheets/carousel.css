@@ -1,0 +1,99 @@
+body {
+   font-family: 'Harmattan', sans-serif;
+}
+
+.nav__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  top: 15px;
+  z-index: 5;
+}
+
+.nav__link {
+  padding: 0.2rem 1.4rem;
+  background-color: black;
+  opacity: 0.9;
+}
+
+.nav__href {
+  letter-spacing: 2px;
+  font-size: 20px;
+  color: white;
+}
+
+.nav__link:hover {
+  background-color: yellow;
+}
+.nav__link:hover .nav__href{
+  color: black;
+}
+
+.strike {
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+
+}
+.carousel {
+  position: relative;
+  height: 600px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.carousel__track-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel__track {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  height: 100%;
+  transition: transform 0.25s ease-out;
+}
+
+.carousel__slide {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 100%;
+}
+
+.carousel__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: yellow;
+  opacity: 0.76;
+  border: 0;
+  z-index: 100;
+  cursor: pointer;
+  outline: none;
+}
+
+.carousel__button--left {
+  left: -40px;
+}
+
+.carousel__button--right {
+  right: -40px;
+}
+
+.carousel__button img {
+  width: 70px;
+  padding: 3px 0;
+}

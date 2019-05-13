@@ -1,29 +1,125 @@
 body {
   font-family: "Harmattan", sans-serif;
-  font-size: 18px;
-  font-weight: lighter;
   background-color: #1B1A1A;
+  opacity: 0.8;
+  padding-bottom: 3rem;
 }
 
-div.about {
+.about_container {
   display: flex;
-  justify-content: column;
-  padding: 10rem;
-}
-
-img {
+  flex-wrap: wrap;
+  padding: 6rem;
   position: absolute;
+  z-index: 4;
+  animation: fade-in 0.7s ease-out;
+  width: 100vw;
+  height: 100vh;
 }
 
-div.text {
+.about_selfie {
+  position: absolute;
+  left: 15%;
+  height: 600px;
+  width: auto;
+  object-fit: cover;
+}
+
+.about_text_container {
   position: relative;
   z-index: 2;
-  left: 24%;
+  margin-left: 24rem;
+  width: 60vw;
+  height: 80vh;
 }
-div.text p {
-  letter-spacing: 0.2px;
-  line-height: 1.4rem;
-  font-size: 1.4rem;
-  padding: 3rem;
-  color: #d1d1d1;
+
+.about_text {
+  margin: 4rem 4rem;
+  padding: 2.6rem 2.6rem;
+  position: absolute;
+  top: 10px;
+  font-size: 17px;
+  line-height: 1.75;
+  letter-spacing: 2.9px;
+  font-weight: bold;
+  color: #FFF99B;
+  background: #1B1B1A;
+  text-transform: uppercase;
+  border: 1px solid white;
+}
+
+.exit {
+  padding: 0.5rem 0.9rem;
+  position: absolute;
+  background: transparent;
+  top: 4%;
+  right: 20%;
+  cursor: pointer;
+  letter-spacing: 2.9px;
+  font-size: 12px;
+  color: white;
+}
+
+.exit:hover {
+  color: yellow;
+  background: black;
+  transition: 0.4s ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.7
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@media all and (max-width: 1024px) {
+  body {
+    padding-top: 4rem;
+    overflow: visible;
+  }
+  .about_container {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3rem 0;
+  }
+  .about_selfie {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    position: static;
+    margin: 0 auto;
+    padding: none;
+  }
+  .about_text_container{
+    position: absolute;
+    top: 62%;
+    z-index: 5;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    width: 85vw;
+  }
+  .about_text {
+    margin: 0 0;
+    font-size: 20px;
+    border: none;
+  }
+  .exit {
+    position: absolute;
+    padding: none;
+    top: -2%;
+    right: 5%;
+    z-index: 40;
+  }
+
 }
