@@ -1,55 +1,120 @@
 body {
    font-family: 'Harmattan', sans-serif;
+   box-sizing: border-box;
+}
+
+nav {
+  max-width: 25%;
+}
+
+.header {
+  background: none;
+  font-family: 'Arial';
+  width: 20%;
+  font-size: 2.5rem;
+  z-index: 150;
+  color: black;
+  position: fixed;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.nav__collapse {
+  position: absolute;
+  margin: 0 auto;
+  width: 10%;
+  z-index: 400;
+  bottom: 4%;
+  left: 8%;
+  color: red;
+  font-size: 1.2rem;
+  padding: none;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.nav__collapse:hover {
+  color: #FFE4E4;
+  transition: all 0.4s;
 }
 
 .nav__container {
+  display: none;
+  position: fixed;
+  margin-top: 24%;
+  z-index: 550;
+  padding: 0.4rem;
+  width: 25%;
+}
+
+.nav__link, .nav__link-sub {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  position: relative;
-  top: 15px;
-  z-index: 5;
-}
-
-.nav__link {
-  padding: 0.2rem 1.4rem;
-  background-color: black;
-  opacity: 0.9;
-}
-
-.nav__href {
-  letter-spacing: 2px;
+  flex-direction: column;
+  line-height: 40px;
   font-size: 20px;
-  color: white;
-}
-
-.nav__link:hover {
-  background-color: yellow;
-}
-.nav__link:hover .nav__href{
-  color: black;
-}
-
-.strike {
-  text-decoration: underline;
-}
-
-a {
+  letter-spacing: 1px;
+  opacity: 0.8;
+  text-align: center;
+  height: 40px;
+  width: 100%;
   text-decoration: none;
 
 }
+
+.nav__link {
+  background-color: yellow;
+  color: black;
+}
+.nav__link:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.4s;
+}
+
+
+.sub__nav {
+  display: none;
+  position: fixed;
+  top: 40%;
+  left: 20%;
+  z-index: 650;
+  padding: 0.4rem;
+  width: 20%;
+}
+
+.nav__link-sub {
+  background-color: #5EFFEF;
+  color: black;
+
+}
+
+.nav__link-sub:hover {
+  background-color: #DD40FE;
+  color: white;
+  transition: all 0.4s;
+}
+a {
+  text-decoration: none;
+}
+
+.is-open {
+  display: block;
+}
 .carousel {
   position: relative;
-  height: 600px;
-  width: 85%;
+  height: 90vh;
+  width: 70vw;
   margin: 0 auto;
+  padding-left: 8%;
+  margin-right: 0;
 }
 
 .carousel__track-container {
   position: relative;
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  overflow:hidden;
 }
 
 .carousel__track {
@@ -65,22 +130,23 @@ a {
   position: absolute;
   top: 0; bottom: 0;
   width: 100%;
+  height: auto;
 }
 
 .carousel__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .carousel__button {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: yellow;
-  opacity: 0.76;
+  top: 0%;
+  width: 50%;
+  height: 100%;
+  opacity: 0;
   border: 0;
-  z-index: 100;
+  z-index: 10;
   cursor: pointer;
   outline: none;
 }

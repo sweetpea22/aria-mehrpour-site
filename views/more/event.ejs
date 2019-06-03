@@ -1,0 +1,62 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Under Many Moons: Los Angeles to Toronto</title>
+    <link rel="stylesheet" href="/stylesheets/carousel.css">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Harmattan" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <h1 class="header">Under Many Moons: LA to Toronto</h1>
+      <div class="nav__container">
+        <a class="nav__link" href="/">home</a>
+        <a class="nav__link" id="projectsLink" href="/">all projects</a>
+        <a class="nav__link" href="/">get in touch</a>
+        <a class="nav__link" href="/about">about me</a>
+        <a class="nav__link" href="https://www.instagram.com/doloveli/"> instagram</a>
+      </div>
+      <div class="sub__nav">
+        <a class="nav__link-sub" href="/portraits">portraits</a>
+        <a class="nav__link-sub" href="/sleepless">sleepless</a>
+        <a class="nav__link-sub" href="/branding-shoots">branding</a>
+        <a class="nav__link-sub" href="/days-gone-by-toronto">days gone by</a>
+      </div>
+      <a class="nav__collapse">
+        <h1>menu</h1>
+      </a>
+    </nav>
+
+    <div class="carousel">
+      <button class="carousel__button carousel__button--left" name="button"></button>
+      <div class="carousel__track-container">
+          <ul class="carousel__track">
+            <% const images = [
+              {img: '/assets/event/event1.jpg'},
+              {img: '/assets/event/event2.jpg'},
+              {img: '/assets/event/event3.jpg'},
+              {img: '/assets/event/event4.jpg'},
+              {img: '/assets/event/event5.jpg'},
+              {img: '/assets/event/event6.jpg'},
+              {img: '/assets/event/event7.jpg'},
+              {img: '/assets/event/event8.jpg'},
+              {img: '/assets/event/event9.jpg'},
+              {img: '/assets/event/event10.jpg'},
+              {img: '/assets/event/event11.jpg'},
+              {img: '/assets/event/event12.jpg'},
+              {img: '/assets/event/event13.jpg'},
+              {img: '/assets/event/event14.jpg'},
+              {img: '/assets/event/event15.jpg'}
+            ] %>
+          <% for (var i = 0; i < images.length; i++) {%>
+            <li class="carousel__slide">
+              <img class="carousel__img" src="<%=images[i].img%>">
+            </li>
+          <% } %>
+        </ul>
+      </div>
+      <button class="carousel__button carousel__button--right" name="button">
+      </button>
+    </div>
+    <script type="text/javascript" src="js/carousel.js"></script>
+  </body>
+</html>

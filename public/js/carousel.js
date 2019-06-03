@@ -1,13 +1,22 @@
 const domStrings = {
   track: '.carousel__track',
   nextBtn: '.carousel__button--right',
-  prevBtn: '.carousel__button--left'
+  prevBtn: '.carousel__button--left',
+  menuBtn: '.nav__collapse',
+  navMenu: '.nav__container',
+  allProjects: '#projectsLink',
+  subNav: '.sub__nav'
 }
 const track = document.querySelector(domStrings.track),
       nextBtn = document.querySelector(domStrings.nextBtn),
       prevBtn = document.querySelector(domStrings.prevBtn),
       slides = Array.from(track.children),
-      slideWidth = slides[0].getBoundingClientRect().width;
+      slideWidth = slides[0].getBoundingClientRect().width,
+      menuBtn = document.querySelector(domStrings.menuBtn),
+      navMenu = document.querySelector(domStrings.navMenu),
+      allProjects = document.querySelector(domStrings.allProjects),
+      subNav = document.querySelector(domStrings.subNav)
+
 
 // arrange slides next to each other
 // get slide width, multiply it by its position in array
@@ -49,4 +58,20 @@ nextBtn.addEventListener('click', e => {
   const nextSlide = currentSlide.nextElementSibling;
 
   moveToSlide(track, currentSlide, nextSlide);
+})
+
+// *** display/hide menu *** //
+
+menuBtn.addEventListener('click', e => {
+  navMenu.classList.toggle('is-open');
+  e.target.style.color = '#FFE4E4';
+})
+
+allProjects.addEventListener('mouseenter', e => {
+  subNav.classList.toggle('is-open');
+})
+
+
+menuBtn.addEventListener('mouseleave', e => {
+  subNav.classList.remove('is-open');
 })

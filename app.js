@@ -16,20 +16,24 @@ app.get('/about', (req, res) => {
   res.render('about');
 });
 
-app.get('/2015', (req, res) => {
-  res.render('archives/archive-15');
+app.get('/under-many-moons', (req, res) => {
+  res.render('more/event');
 });
 
-app.get('/2016', (req, res) => {
-  res.render('archives/archive-16');
+app.get('/days-gone-by-toronto', (req, res) => {
+  res.render('more/days-gone-by');
 });
 
-app.get('/2017', (req, res) => {
-  res.render('archives/archive-17');
+app.get('/sleepless', (req, res) => {
+  res.render('more/sleepless');
 });
 
-app.get('/2018', (req, res) => {
-  res.render('archives/archive-18');
+app.get('/portraits', (req, res) => {
+  res.render('more/portrait');
+});
+
+app.get('/branding-shoots', (req, res) => {
+  res.render('more/branding');
 });
 
 const port = process.env.PORT || 3000;

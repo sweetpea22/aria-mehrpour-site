@@ -67,7 +67,7 @@ header .nav-link {
   letter-spacing: 2px;
 }
 
-.loader.hidden {
+.hidden {
   animation: fadeOut 2.3s 2s;
   animation-fill-mode: forwards;
 }
@@ -75,7 +75,7 @@ header .nav-link {
 @keyframes fadeOut {
   100%{
     opacity: 0;
-    display: hidden;
+    display: none;
     z-index: -1;
   }
 }
@@ -176,6 +176,9 @@ header .nav-link:hover {
 
 /* photo flow */
 
+h4 {
+  display: none;
+}
 div img {
   z-index: 1;
   position: absolute;
@@ -234,11 +237,17 @@ img:hover {
   top: 1420px;
   right: 7%;
 }
+.a-10 img {
+  left: 6%;
+  top: 1280px;
+}
+
 .btm-panel {
   position: absolute;
   top: 117rem;
 }
 .btm-panel p {
   font-size: 16px;
+  font-family: 'Work Sans', sans-serif;
 }
 }
