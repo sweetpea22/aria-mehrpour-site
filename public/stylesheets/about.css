@@ -1,70 +1,77 @@
 body {
   font-family: "Harmattan", sans-serif;
-  background-color: #1B1A1A;
-  opacity: 0.8;
-  padding-bottom: 3rem;
+  opacity: 80%;
+  background: black;
+  padding-bottom: 1rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-.about_container {
+.about__container {
   display: flex;
-  flex-wrap: wrap;
-  padding: 6rem;
-  position: absolute;
-  z-index: 4;
+  justify-content: center;
+  z-index: 3;
   animation: fade-in 0.7s ease-out;
   width: 100vw;
   height: 100vh;
 }
 
-.about_selfie {
+.about__selfie {
   position: absolute;
-  left: 15%;
-  height: 600px;
-  width: auto;
+  top: 5%;
+  margin: 0 auto;
+  width: 30vw;
   object-fit: cover;
 }
 
-.about_text_container {
-  position: relative;
-  z-index: 2;
-  margin-left: 24rem;
-  width: 60vw;
-  height: 80vh;
+.about__text-container {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  top: 50%;
+  z-index: 10;
+  width: 50vw;
+  height: auto;
 }
 
-.about_text {
-  margin: 4rem 4rem;
-  padding: 2.6rem 2.6rem;
+.about__text {
   position: absolute;
-  top: 10px;
-  font-size: 17px;
+  padding: 1rem 1rem;
+  bottom: 0;
+  font-size: 1.2rem;
   line-height: 1.75;
   letter-spacing: 2.9px;
-  font-weight: bold;
   color: #FFF99B;
-  background: #1B1B1A;
-  text-transform: uppercase;
-  border: 1px solid white;
+  background: black;
+
 }
 
-.exit {
+a {
+  color: white;
+  text-decoration: none;
+}
+.about__close {
   padding: 0.5rem 0.9rem;
   position: absolute;
   background: transparent;
-  top: 4%;
-  right: 20%;
+  top: 79%;
+  left: 20%;
   cursor: pointer;
   letter-spacing: 2.9px;
-  font-size: 12px;
+  font-size: 1rem;
   color: white;
 }
 
-.exit:hover {
-  color: yellow;
+.about__close:hover {
+  color: #FFF99B;
   background: black;
   transition: 0.4s ease-in-out;
 }
 
+.is-open {
+  display: block;
+}
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -81,45 +88,30 @@ body {
   }
 }
 
-
-@media all and (max-width: 1024px) {
-  body {
-    padding-top: 4rem;
-    overflow: visible;
-  }
-  .about_container {
+@media all and (max-width: 768px) {
+  .about__container {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 3rem 0;
   }
-  .about_selfie {
-    width: 90%;
-    max-width: 600px;
-    height: auto;
-    position: static;
+  .about__selfie {
+    width: auto;
+    height: 60vh;
     margin: 0 auto;
-    padding: none;
+    align-self: center;
   }
-  .about_text_container{
-    position: absolute;
-    top: 62%;
-    z-index: 5;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    width: 85vw;
+  .about__text-container{
+    width: 80vw;
+    position: fixed;
+    top: 40%;
+    z-index: 6;
   }
-  .about_text {
-    margin: 0 0;
-    font-size: 20px;
-    border: none;
+  .about__text {
+    font-size: 1.25rem;
   }
-  .exit {
-    position: absolute;
-    padding: none;
-    top: -2%;
-    right: 5%;
-    z-index: 40;
+  .about__close {
+    top: 10%;
+    left: 2%;
+    transform: rotate(-90deg);
   }
 
 }

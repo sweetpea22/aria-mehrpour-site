@@ -7,7 +7,7 @@ nav {
   max-width: 25%;
 }
 
-.header {
+.header, .img_counter {
   background: none;
   font-family: 'Arial';
   width: 20%;
@@ -19,14 +19,23 @@ nav {
   text-align: center;
 }
 
+div.img_counter {
+  font-family: 'Harmattan', sans-serif;
+  font-size: 1.2rem;
+  top: 90%;
+  left: 53.5%;
+  z-index: 400;
+}
+
 .nav__collapse {
+  font-family: 'Harmattan', sans-serif;
   position: absolute;
   margin: 0 auto;
-  width: 10%;
+  width: 15%;
   z-index: 400;
-  bottom: 4%;
-  left: 8%;
-  color: red;
+  bottom: 6.5%;
+  left: 5%;
+  color: #A7A7A7;
   font-size: 1.2rem;
   padding: none;
   cursor: pointer;
@@ -35,14 +44,15 @@ nav {
 }
 
 .nav__collapse:hover {
-  color: #FFE4E4;
-  transition: all 0.4s;
+  color: red;
+  transform: rotate(260);
+  transition: all 1s;
 }
 
 .nav__container {
   display: none;
   position: fixed;
-  margin-top: 24%;
+  margin-top: 29%;
   z-index: 550;
   padding: 0.4rem;
   width: 25%;
@@ -72,6 +82,10 @@ nav {
   transition: all 0.4s;
 }
 
+.is-selected {
+  background: black;
+  color: white;
+}
 
 .sub__nav {
   display: none;
@@ -94,6 +108,7 @@ nav {
   color: white;
   transition: all 0.4s;
 }
+
 a {
   text-decoration: none;
 }
@@ -158,8 +173,73 @@ a {
 .carousel__button--right {
   right: -40px;
 }
+.next_arrow {
+  position: fixed;
+  bottom: 7%;
+  right: 25px;
+  width: 4%;
+  background-color: yellow;
+  opacity: 0.75;
+  padding: 3.5px;
+  z-index: 5;
+}
 
-.carousel__button img {
-  width: 70px;
-  padding: 3px 0;
+.isHidden {
+  display: none;
+}
+
+@media all and (max-width: 768px) {
+  .header {
+    width: 90vw;
+    font-size: 1.8rem;
+    margin: 2% 0 0 2%;
+    text-align: left;
+    position: absolute;
+    top: 5%;
+  }
+  div.img_counter {
+    font-size: 1.3rem;
+    /* font-weight: bolder; */
+    color: black;
+    top: 90%;left: -4.5%;
+  }
+  .carousel {
+    position: relative;
+    height: 90vh;
+    width: 85vw;
+    margin: 0 auto;
+    padding-left: 8%;
+    margin-right: 0;
+  }
+  .nav__collapse {
+    font-family: 'Arial';
+    margin: 0 auto;
+    font-size: 0.8rem;
+    width: 25%;
+    z-index: 400;
+    top: 84%; left: 1.55%;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+  }
+  .nav__container {
+    width: 40%;
+  }
+  .sub__nav {
+    top: 28%;
+    left: 35%;
+    z-index: 650;
+    padding: 0.4rem;
+    width: 40%;
+  }
+  .nav__link, .nav__link-sub {
+    line-height: 60px;
+    height: 60px;
+    width: 100%;
+  }
+  .next_arrow {
+    position: fixed;
+    top: 91%;
+    right: 20px;
+    width: 4%;
+    background-color: yellow;
 }

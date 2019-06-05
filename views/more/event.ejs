@@ -10,7 +10,7 @@
       <h1 class="header">Under Many Moons: LA to Toronto</h1>
       <div class="nav__container">
         <a class="nav__link" href="/">home</a>
-        <a class="nav__link" id="projectsLink" href="/">all projects</a>
+        <a class="nav__link" id="projectsLink" href="#">all projects</a>
         <a class="nav__link" href="/">get in touch</a>
         <a class="nav__link" href="/about">about me</a>
         <a class="nav__link" href="https://www.instagram.com/doloveli/"> instagram</a>
@@ -54,8 +54,10 @@
           <% } %>
         </ul>
       </div>
+      <div class="img_counter">1/<%=images.length%></div>
       <button class="carousel__button carousel__button--right" name="button">
       </button>
+      <img class="next_arrow" src="assets/cursor/nextarrow.svg" alt="">
     </div>
     <script type="text/javascript" src="js/carousel.js"></script>
   </body>

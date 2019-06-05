@@ -5,7 +5,10 @@ const domStrings = {
   menuBtn: '.nav__collapse',
   navMenu: '.nav__container',
   allProjects: '#projectsLink',
-  subNav: '.sub__nav'
+  subNav: '.sub__nav',
+  nextArrow: '.next_arrow',
+  prevArrow: '.prev_arrow',
+  imgCounter: '.img_counter'
 }
 const track = document.querySelector(domStrings.track),
       nextBtn = document.querySelector(domStrings.nextBtn),
@@ -15,11 +18,13 @@ const track = document.querySelector(domStrings.track),
       menuBtn = document.querySelector(domStrings.menuBtn),
       navMenu = document.querySelector(domStrings.navMenu),
       allProjects = document.querySelector(domStrings.allProjects),
-      subNav = document.querySelector(domStrings.subNav)
-
+      subNav = document.querySelector(domStrings.subNav),
+      nextArrow = document.querySelector(domStrings.nextArrow),
+      prevArrow = document.querySelector(domStrings.prevArrow);
+      imgCounter = document.querySelector(domStrings.imgCounter);
 
 // arrange slides next to each other
-// get slide width, multiply it by its position in array
+// get slide width, multiply it by its position in arrays
 // that's how far from left axis it must be.
 const setSlidePosition = (slide, index) => {
   slide.style.left = slideWidth * index + 'px';
@@ -36,21 +41,42 @@ const moveToSlide = (track, currentSlide, targetSlide) => {
   track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
   currentSlide.classList.remove('currentSlide');
   targetSlide.classList.add('currentSlide');
+  countImages(slides);
 }
 
-const hideShowArrows = (slides, prevBtn, nextBtn) => {
 
+// image counter
+const countImages = (slides) => {
+  let html = '<div class="img_counter">%num% of %total% </div>'
+  slides.findIndex((cur, index) => {
+    let realIndex = index + 1;
+    if(cur.className.includes('currentSlide')){
+      imgCounter.textContent = `${realIndex}/${slides.length}`;
+    }
+  })
 }
 
-// *** arrow control *** //
+// *** previous/next button control *** //
+
+const hideShowArrows = (slides, currentSlide, nextArrow) => {
+  let targetIndex = slides.findIndex(slide => slide === currentSlide);
+  console.log(targetIndex);
+  console.log(slides.length-1)
+  // let lastSlide = slides[slides.length];
+  if(targetIndex === (slides.length)){
+    nextArrow.classList.add('isHidden');
+  } else {
+    nextArrow.classList.remove('isHidden');
+  }
+}
 
 prevBtn.addEventListener('click', e => {
   let currentSlide = track.querySelector('.currentSlide');
   const prevSlide = currentSlide.previousElementSibling;
 
   // get slide index of previous slide. Is this necessary?
-
   moveToSlide(track, currentSlide, prevSlide);
+  hideShowArrows(slides, currentSlide, nextArrow)
 })
 
 nextBtn.addEventListener('click', e => {
@@ -58,20 +84,33 @@ nextBtn.addEventListener('click', e => {
   const nextSlide = currentSlide.nextElementSibling;
 
   moveToSlide(track, currentSlide, nextSlide);
+  hideShowArrows(slides, currentSlide, nextArrow)
 })
 
 // *** display/hide menu *** //
 
 menuBtn.addEventListener('click', e => {
   navMenu.classList.toggle('is-open');
-  e.target.style.color = '#FFE4E4';
+  if(navMenu.className.includes('is-open')){
+    e.target.style.color = 'black';
+    menuBtn.innerHTML = '<strong>CLOSE<strong>'
+    menuBtn.style.left = '5.5%';
+  } else {
+    menuBtn.innerHTML = 'MENU';
+  }
 })
 
 allProjects.addEventListener('mouseenter', e => {
-  subNav.classList.toggle('is-open');
+  subNav.classList.add('is-open');
 })
 
+subNav.addEventListener('mouseenter', e => {
+  allProjects.classList.toggle('is-selected');
+})
+subNav.addEventListener('mouseleave', e => {
+  allProjects.classList.toggle('is-selected');
+})
 
-menuBtn.addEventListener('mouseleave', e => {
+menuBtn.addEventListener('mouseout', e => {
   subNav.classList.remove('is-open');
 })
