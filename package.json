@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d dist"
   },
-  "author": "sweetpea",
+  "homepage": "https://sweetpea22.github.io/doloworld",
+  "author": "sweetpea22",
   "license": "ISC"
 }
