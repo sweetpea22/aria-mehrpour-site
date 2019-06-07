@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "gh-pages": "^2.0.1"
   },
   "devDependencies": {
     "body-parser": "^1.18.3",
