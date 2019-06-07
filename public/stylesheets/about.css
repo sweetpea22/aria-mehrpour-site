@@ -51,27 +51,7 @@ a {
   color: white;
   text-decoration: none;
 }
-.about__close {
-  padding: 0.5rem 0.9rem;
-  position: absolute;
-  background: transparent;
-  top: 79%;
-  left: 20%;
-  cursor: pointer;
-  letter-spacing: 2.9px;
-  font-size: 1rem;
-  color: white;
-}
 
-.about__close:hover {
-  color: #FFF99B;
-  background: black;
-  transition: 0.4s ease-in-out;
-}
-
-.is-open {
-  display: block;
-}
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -87,6 +67,92 @@ a {
     opacity: 1;
   }
 }
+
+nav {
+  max-width: 30%;
+}
+
+.nav__collapse {
+  width: 10%;
+  z-index: 400;
+  padding: 0.5rem 0.9rem;
+  position: absolute;
+  background: transparent;
+  top: 50%;
+  left: 20%;
+  cursor: pointer;
+  letter-spacing: 2.9px;
+  font-size: 1rem;
+  color: white;
+}
+
+.nav__collapse:hover {
+  color: #FFF99B;
+}
+
+.nav__container {
+  display: none;
+  position: absolute;
+  margin-top: 1%;
+  left: 10%; top: 10%;
+  z-index: 550;
+  padding: 0.4rem;
+  width: 25%;
+}
+
+.nav__link, .nav__link-sub {
+  display: flex;
+  flex-direction: column;
+  line-height: 40px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  text-align: center;
+  height: 40px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.nav__link {
+  background-color: yellow;
+  color: black;
+}
+.nav__link:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.4s;
+}
+
+.is-selected {
+  background: black;
+  color: white;
+}
+
+.sub__nav {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 34%;
+  z-index: 650;
+  padding: 0.4rem;
+  width: 20%;
+}
+
+.nav__link-sub {
+  background-color: #5EFFEF;
+  color: black;
+
+}
+
+.nav__link-sub:hover {
+  background-color: #DD40FE;
+  color: white;
+  transition: all 0.4s;
+}
+.is-open {
+  display: block;
+}
+
 
 @media all and (max-width: 768px) {
   .about__container {
@@ -108,10 +174,32 @@ a {
   .about__text {
     font-size: 1.25rem;
   }
-  .about__close {
-    top: 10%;
-    left: 2%;
+  .nav__collapse {
+    font-family: 'Harmattan', sans-serif;
+    margin: 0 auto;
+    font-size: 1rem;
+    width: 25%;
+    z-index: 400;
+    top: 30%; left: 2%;
     transform: rotate(-90deg);
+    transform-origin: top left;
+  }
+  .nav__container {
+    width: 80vw;
+  }
+  .sub__nav {
+    top: 55%;
+    left: 15%;
+    z-index: 650;
+    padding: 0.4rem;
+    width: 70%;
+    opacity: 1;
+  }
+  .nav__link, .nav__link-sub {
+    line-height: 60px;
+    height: 60px;
+    width: 100%;
+    opacity: 100%;
   }
 
 }
