@@ -1,7 +1,6 @@
 const express = require('express'),
   bodyParser = require('body-parser'),
-  app = express(),
-  path = require('path');
+  app = express();
 
 app.set('view engine', 'ejs');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
