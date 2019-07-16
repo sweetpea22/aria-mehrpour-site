@@ -44,7 +44,6 @@ const moveToSlide = (track, currentSlide, targetSlide) => {
   countImages(slides);
 }
 
-
 // image counter
 const countImages = (slides) => {
   let html = '<div class="img_counter">%num% of %total% </div>'
@@ -58,25 +57,23 @@ const countImages = (slides) => {
 
 // *** previous/next button control *** //
 
-const hideShowArrows = (slides, currentSlide, nextArrow) => {
-  let targetIndex = slides.findIndex(slide => slide === currentSlide);
-  console.log(targetIndex);
-  console.log(slides.length-1)
-  // let lastSlide = slides[slides.length];
-  if(targetIndex === (slides.length)){
-    nextArrow.classList.add('isHidden');
-  } else {
-    nextArrow.classList.remove('isHidden');
-  }
+const slideFinished = slides => {
+  const arrow = document.querySelector(domStrings.nextArrow);
+  const lastSlide = slides[slides.length-1]
+    if(lastSlide.className.includes('currentSlide')){
+      arrow.style.visibility = 'hidden';
+    } else {
+      arrow.style.visibility = 'visible';
+    }
+
 }
 
 prevBtn.addEventListener('click', e => {
   let currentSlide = track.querySelector('.currentSlide');
   const prevSlide = currentSlide.previousElementSibling;
 
-  // get slide index of previous slide. Is this necessary?
   moveToSlide(track, currentSlide, prevSlide);
-  hideShowArrows(slides, currentSlide, nextArrow)
+  slideFinished(slides);
 })
 
 nextBtn.addEventListener('click', e => {
@@ -84,7 +81,7 @@ nextBtn.addEventListener('click', e => {
   const nextSlide = currentSlide.nextElementSibling;
 
   moveToSlide(track, currentSlide, nextSlide);
-  hideShowArrows(slides, currentSlide, nextArrow)
+  slideFinished(slides);
 })
 
 // *** display/hide menu *** //
@@ -110,6 +107,13 @@ subNav.addEventListener('mouseenter', e => {
 subNav.addEventListener('mouseleave', e => {
   allProjects.classList.toggle('is-selected');
 })
+
+// const removeOldSelection = (selector) => {
+//   const arr = Array.from(document.querySelectorAll(selector))
+//   arr.forEach(el => {
+//     el.classList.remove('is-selected');
+//   })
+// }
 
 menuBtn.addEventListener('mouseout', e => {
   subNav.classList.remove('is-open');

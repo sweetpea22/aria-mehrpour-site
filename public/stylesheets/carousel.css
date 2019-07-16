@@ -59,8 +59,13 @@ div.img_counter {
 }
 
 .nav__link, .nav__link-sub {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
   line-height: 40px;
   font-size: 20px;
   letter-spacing: 1px;
@@ -218,8 +223,12 @@ a {
     width: 25%;
     z-index: 400;
     top: 84%; left: 1.55%;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
-    transform-origin: top left;
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+            transform-origin: top left;
   }
   .nav__container {
     width: 40%;
@@ -242,4 +251,5 @@ a {
     right: 20px;
     width: 4%;
     background-color: yellow;
+  }
 }
