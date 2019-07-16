@@ -202,7 +202,7 @@ label {
   letter-spacing: 2.5px;
   text-align: center;
 }
-@media all and (min-width: 761px) {
+@media all and (min-width: 900px) {
   body {
     margin: 0;
     padding: 0;
@@ -334,7 +334,7 @@ label {
     padding-right: 3rem;
   }
 }
-@media all and (max-width: 760px) {
+@media all and (max-width: 899px) {
   header .brand {
     font-size: 30px;
     margin-top: 10%;
@@ -373,6 +373,7 @@ label {
     flex-direction: column;
     align-items: center;
     padding: 0.5rem;
+    width: 100%;
     position: sticky;
     top: 99%;
     bottom: 0%;
