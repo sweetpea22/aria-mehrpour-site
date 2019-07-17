@@ -11,17 +11,17 @@ const domStrings = {
   imgCounter: '.img_counter'
 }
 const track = document.querySelector(domStrings.track),
-      nextBtn = document.querySelector(domStrings.nextBtn),
-      prevBtn = document.querySelector(domStrings.prevBtn),
-      slides = Array.from(track.children),
-      slideWidth = slides[0].getBoundingClientRect().width,
-      menuBtn = document.querySelector(domStrings.menuBtn),
-      navMenu = document.querySelector(domStrings.navMenu),
-      allProjects = document.querySelector(domStrings.allProjects),
-      subNav = document.querySelector(domStrings.subNav),
-      nextArrow = document.querySelector(domStrings.nextArrow),
-      prevArrow = document.querySelector(domStrings.prevArrow);
-      imgCounter = document.querySelector(domStrings.imgCounter);
+  nextBtn = document.querySelector(domStrings.nextBtn),
+  prevBtn = document.querySelector(domStrings.prevBtn),
+  slides = Array.from(track.children),
+  slideWidth = slides[0].getBoundingClientRect().width,
+  menuBtn = document.querySelector(domStrings.menuBtn),
+  navMenu = document.querySelector(domStrings.navMenu),
+  allProjects = document.querySelector(domStrings.allProjects),
+  subNav = document.querySelector(domStrings.subNav),
+  nextArrow = document.querySelector(domStrings.nextArrow),
+  prevArrow = document.querySelector(domStrings.prevArrow);
+imgCounter = document.querySelector(domStrings.imgCounter);
 
 // arrange slides next to each other
 // get slide width, multiply it by its position in arrays
@@ -49,7 +49,7 @@ const countImages = (slides) => {
   let html = '<div class="img_counter">%num% of %total% </div>'
   slides.findIndex((cur, index) => {
     let realIndex = index + 1;
-    if(cur.className.includes('currentSlide')){
+    if (cur.className.includes('currentSlide')) {
       imgCounter.textContent = `${realIndex}/${slides.length}`;
     }
   })
@@ -59,12 +59,12 @@ const countImages = (slides) => {
 
 const slideFinished = slides => {
   const arrow = document.querySelector(domStrings.nextArrow);
-  const lastSlide = slides[slides.length-1]
-    if(lastSlide.className.includes('currentSlide')){
-      arrow.style.visibility = 'hidden';
-    } else {
-      arrow.style.visibility = 'visible';
-    }
+  const lastSlide = slides[slides.length - 1]
+  if (lastSlide.className.includes('currentSlide')) {
+    arrow.style.visibility = 'hidden';
+  } else {
+    arrow.style.visibility = 'visible';
+  }
 
 }
 
@@ -88,10 +88,10 @@ nextBtn.addEventListener('click', e => {
 
 menuBtn.addEventListener('click', e => {
   navMenu.classList.toggle('is-open');
-  if(navMenu.className.includes('is-open')){
+  if (navMenu.className.includes('is-open')) {
     e.target.style.color = 'black';
-    menuBtn.innerHTML = '<strong>CLOSE<strong>'
-    menuBtn.style.left = '5.5%';
+    menuBtn.innerHTML = 'CLOSE'
+    menuBtn.style.left = '85w';
   } else {
     menuBtn.innerHTML = 'MENU';
   }

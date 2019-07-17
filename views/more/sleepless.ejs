@@ -1,19 +1,25 @@
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sleepless, a photoseries by Aria Mehrpour</title>
-    <link rel="stylesheet" href="/stylesheets/carousel.css">
-    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Harmattan" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/carousel.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Archivo+Black|Harmattan"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <nav>
       <h1 class="header">Sleepless, an archive</h1>
       <div class="nav__container">
         <a class="nav__link" href="/">home</a>
-        <a class="nav__link" id="projectsLink" href="/">all projects</a>
+        <a class="nav__link" id="projectsLink" href="#">projects</a>
         <a class="nav__link" href="/">get in touch</a>
         <a class="nav__link" href="/about">about me</a>
-        <a class="nav__link" href="https://www.instagram.com/doloveli/"> instagram</a>
+        <a class="nav__link" href="https://www.instagram.com/doloveli/">
+          instagram</a
+        >
       </div>
       <div class="sub__nav">
         <a class="nav__link-sub" href="/under-many-moons">event shoots</a>
@@ -27,33 +33,36 @@
     </nav>
 
     <div class="carousel">
-      <button class="carousel__button carousel__button--left" name="button"></button>
+      <button
+        class="carousel__button carousel__button--left"
+        name="button"
+      ></button>
       <div class="carousel__track-container">
-          <ul class="carousel__track">
-            <% const images = [
-              {img: '/assets/sleepless/sleepless1.jpg'},
-              {img: '/assets/sleepless/sleepless2.jpg'},
-              {img: '/assets/sleepless/sleepless3.jpg'},
-              {img: '/assets/sleepless/sleepless4.jpg'},
-              {img: '/assets/sleepless/sleepless5.jpg'},
-              {img: '/assets/sleepless/sleepless6.jpg'},
-              {img: '/assets/sleepless/sleepless7.jpg'},
-              {img: '/assets/sleepless/sleepless8.jpg'},
-              {img: '/assets/sleepless/sleepless9.jpg'},
-              {img: '/assets/sleepless/sleepless10.jpg'},
-
-            ] %>
-          <% for (var i = 0; i < images.length; i++) {%>
-            <li class="carousel__slide">
-              <img class="carousel__img" src="<%=images[i].img%>">
-            </li>
+        <ul class="carousel__track">
+          <% const images = [ {img: '/assets/sleepless/sleepless1.jpg'}, {img:
+          '/assets/sleepless/sleepless2.jpg'}, {img:
+          '/assets/sleepless/sleepless3.jpg'}, {img:
+          '/assets/sleepless/sleepless4.jpg'}, {img:
+          '/assets/sleepless/sleepless5.jpg'}, {img:
+          '/assets/sleepless/sleepless6.jpg'}, {img:
+          '/assets/sleepless/sleepless7.jpg'}, {img:
+          '/assets/sleepless/sleepless8.jpg'}, {img:
+          '/assets/sleepless/sleepless9.jpg'}, {img:
+          '/assets/sleepless/sleepless10.jpg'}, ] %> <% for (var i = 0; i <
+          images.length; i++) {%>
+          <li class="carousel__slide">
+            <img class="carousel__img" src="<%=images[i].img%>" />
+          </li>
           <% } %>
         </ul>
       </div>
       <div class="img_counter">1/<%=images.length%></div>
-      <button class="carousel__button carousel__button--right" name="button">
-      </button>
-      <img class="next_arrow" src="assets/cursor/nextarrow.svg" alt="">
+      <button
+        class="carousel__button carousel__button--right"
+        name="button"
+      ></button>
+      <img class="next_arrow" src="assets/cursor/nextarrow.svg" alt="" />
     </div>
     <script type="text/javascript" src="js/carousel.js"></script>
   </body>
+</html>

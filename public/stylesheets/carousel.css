@@ -1,41 +1,50 @@
 body {
-   font-family: 'Harmattan', sans-serif;
-   box-sizing: border-box;
+  font-family: "Harmattan", sans-serif;
+  box-sizing: border-box;
 }
 
 nav {
   max-width: 25%;
 }
+.navbar__mobile {
+  background: black;
+  height: 3rem;
+  width: 110%;
+  visibility: hidden;
+  position: fixed;
+}
 
-.header, .img_counter {
+.header {
   background: none;
-  font-family: 'Arial';
-  width: 20%;
+  font-family: "Arial";
+  width: 30vw;
   font-size: 2.5rem;
   z-index: 150;
   color: black;
   position: fixed;
-  padding: 0 1rem;
+  top: 5%;
+  padding-left: 1rem;
   text-align: center;
 }
 
-div.img_counter {
-  font-family: 'Harmattan', sans-serif;
+.img_counter {
+  font-family: "Harmattan", sans-serif;
   font-size: 1.2rem;
-  top: 90%;
+  position: absolute;
+  top: 90vh;
   left: 53.5%;
   z-index: 400;
 }
 
 .nav__collapse {
-  font-family: 'Harmattan', sans-serif;
+  font-family: "Harmattan", sans-serif;
   position: absolute;
   margin: 0 auto;
-  width: 15%;
+  width: 10%;
   z-index: 400;
   bottom: 6.5%;
   left: 5%;
-  color: #A7A7A7;
+  color: #a7a7a7;
   font-size: 1.2rem;
   padding: none;
   cursor: pointer;
@@ -58,23 +67,23 @@ div.img_counter {
   width: 25%;
 }
 
-.nav__link, .nav__link-sub {
+.nav__link,
+.nav__link-sub {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   line-height: 40px;
   font-size: 20px;
   letter-spacing: 1px;
   opacity: 0.8;
   text-align: center;
   height: 40px;
-  width: 100%;
+  width: 80%;
   text-decoration: none;
-
 }
 
 .nav__link {
@@ -103,13 +112,12 @@ div.img_counter {
 }
 
 .nav__link-sub {
-  background-color: #5EFFEF;
+  background-color: #5effef;
   color: black;
-
 }
 
 .nav__link-sub:hover {
-  background-color: #DD40FE;
+  background-color: #dd40fe;
   color: white;
   transition: all 0.4s;
 }
@@ -134,7 +142,7 @@ a {
   position: relative;
   height: 100%;
   width: 100%;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .carousel__track {
@@ -148,7 +156,8 @@ a {
 
 .carousel__slide {
   position: absolute;
-  top: 0; bottom: 0;
+  top: 0;
+  bottom: 0;
   width: 100%;
   height: auto;
 }
@@ -180,76 +189,142 @@ a {
 }
 .next_arrow {
   position: fixed;
-  bottom: 7%;
+  bottom: 10%;
   right: 25px;
   width: 4%;
   background-color: yellow;
   opacity: 0.75;
   padding: 3.5px;
   z-index: 5;
+  cursor: pointer;
 }
 
 .isHidden {
   display: none;
 }
 
-@media all and (max-width: 768px) {
-  .header {
+@media only screen and (max-width: 565px) {
+  body {
+    overflow-x: hidden;
+  }
+  nav {
+    display: flex;
+    width: 90vw;
+  }
+  nav > .header {
     width: 90vw;
     font-size: 1.8rem;
-    margin: 2% 0 0 2%;
     text-align: left;
     position: absolute;
-    top: 5%;
+    top: 19%;
+    left: 3%;
   }
-  div.img_counter {
-    font-size: 1.3rem;
-    /* font-weight: bolder; */
-    color: black;
-    top: 90%;left: -4.5%;
-  }
-  .carousel {
-    position: relative;
-    height: 90vh;
-    width: 85vw;
-    margin: 0 auto;
-    padding-left: 8%;
-    margin-right: 0;
-  }
-  .nav__collapse {
-    font-family: 'Arial';
-    margin: 0 auto;
-    font-size: 0.8rem;
-    width: 25%;
+  nav > .nav__collapse {
+    font-family: "Arial", sans-serif;
+    color: lightgrey;
+    font-weight: 200;
+    font-size: 1rem;
+    margin: 2% 0 0 2%;
+    width: 5%;
     z-index: 400;
-    top: 84%; left: 1.55%;
+    position: fixed;
+    top: 13%;
+    left: 85vw;
     -webkit-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
     -webkit-transform-origin: top left;
     -ms-transform-origin: top left;
-            transform-origin: top left;
+    transform-origin: top left;
   }
-  .nav__container {
-    width: 40%;
+  div > .img_counter {
+    font-size: 1.5rem;
+    color: black;
+    top: 84vh;
+    text-align: center;
+    left: 9%;
   }
-  .sub__nav {
-    top: 28%;
-    left: 35%;
+  body > div.carousel {
+    position: relative;
+    height: 100vh;
+    width: 95vw;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+  body > nav > .nav__container {
+    width: 100%;
+  }
+  nav > .sub__nav {
+    top: 43vh;
+    left: 3%;
     z-index: 650;
-    padding: 0.4rem;
-    width: 40%;
+    padding: 0;
+    width: 100%;
   }
-  .nav__link, .nav__link-sub {
+  nav > .nav__link,
+  nav > .nav__link-sub {
     line-height: 60px;
     height: 60px;
     width: 100%;
   }
   .next_arrow {
-    position: fixed;
-    top: 91%;
-    right: 20px;
-    width: 4%;
+    position: absolute;
+    top: 82.5vh;
+    left: 79vw;
+    height: 2.5rem;
+    width: 15%;
     background-color: yellow;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 566px) and (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+  .header {
+    top: 12%;
+    text-align: right;
+    width: 90vw;
+  }
+
+  .next_arrow {
+    top: 84vh;
+    left: 85vw;
+    height: 4rem;
+    width: 8%;
+  }
+  .nav__collapse {
+    top: 7vh;
+    font-size: 1.2rem;
+  }
+  div.carousel {
+    position: relative;
+    height: 100vh;
+    width: 95vw;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+  .nav__container {
+    width: 100%;
+  }
+  nav > .sub__nav {
+    top: 44vh;
+    padding: 0;
+    `left: 2%;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  nav > .nav__link,
+  nav > .nav__link-sub {
+    line-height: 120px;
+    height: 120px;
+    width: 100%;
+    font-size: 32px;
+  }
+  .img_counter {
+    top: 86vh;
+    text-align: center;
+    left: 4%;
   }
 }
