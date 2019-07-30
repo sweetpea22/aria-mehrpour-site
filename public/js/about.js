@@ -7,20 +7,23 @@ const domStrings = {
 
 
 const menuBtn = document.querySelector(domStrings.menuBtn),
-navMenu = document.querySelector(domStrings.navMenu),
-allProjects = document.querySelector(domStrings.allProjects),
-subNav = document.querySelector(domStrings.subNav)
+  navMenu = document.querySelector(domStrings.navMenu),
+  allProjects = document.querySelector(domStrings.allProjects),
+  subNav = document.querySelector(domStrings.subNav)
 
 // *** display/hide menu *** //
 
 menuBtn.addEventListener('click', e => {
   navMenu.classList.toggle('is-open');
-  if(navMenu.className.includes('is-open')){
+  if (navMenu.className.includes('is-open')) {
     e.target.style.color = 'yellow';
     menuBtn.innerHTML = '<strong>CLOSE<strong>'
-    // menuBtn.style.left = '5.5%';
+    menuBtn.style.background = 'black';
+    menuBtn.style.textAlign = 'center';
   } else {
     menuBtn.innerHTML = 'MENU';
+    menuBtn.style.background = 'black';
+    menuBtn.style.textAlign = 'center';
   }
 })
 

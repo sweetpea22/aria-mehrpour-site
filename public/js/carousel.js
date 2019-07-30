@@ -8,7 +8,8 @@ const domStrings = {
   subNav: '.sub__nav',
   nextArrow: '.next_arrow',
   prevArrow: '.prev_arrow',
-  imgCounter: '.img_counter'
+  imgCounter: '.img_counter',
+  trackContainer: '.carousel__track-container'
 }
 const track = document.querySelector(domStrings.track),
   nextBtn = document.querySelector(domStrings.nextBtn),
@@ -108,13 +109,63 @@ subNav.addEventListener('mouseleave', e => {
   allProjects.classList.toggle('is-selected');
 })
 
-// const removeOldSelection = (selector) => {
-//   const arr = Array.from(document.querySelectorAll(selector))
-//   arr.forEach(el => {
-//     el.classList.remove('is-selected');
-//   })
-// }
-
 menuBtn.addEventListener('mouseout', e => {
   subNav.classList.remove('is-open');
 })
+
+// **** swipe function **** // 
+
+// const _c = document.querySelector(domStrings.trackContainer),
+//   N = track.children.length;
+
+// _c.style.setProperty('--n', N);
+
+// let x0 = null;
+// let i = 0;
+// let intSign;
+// let locked = false;
+
+// // unify touch and mouse events
+// const unify = e => e.changedTouches ? e.changedTouches[0] : e;
+
+// // detect direction between touchstart and touch end
+// const lock = e => {
+//   // lock mousedown/touchstart 
+//   x0 = unify(e).clientX;
+//   _c.classList.toggle('smooth', !(locked == true));
+// };
+
+// // move the image depending on values of locked
+
+// const move = e => {
+//   // check if there is a X value 
+//   if (locked) {
+//     let distX = unify(e).clientX - x0,
+//       intSign = Math.sign(distX);
+
+//     if ((i > 0 || intSign < 0) && i < N - 1 || intSign > 0) {
+//       _c.style.setProperty("--i", i -= intSign);
+//       _c.style.setProperty("--tx", "0px");
+//       _c.classList.toggle('smooth', !(locked == false));
+
+//       // reset starting X coord to null 
+
+//     }
+//   }
+// };
+
+// const drag = e => {
+//   e.preventDefault();
+
+//   if (locked) {
+//     _c.style.setProperty('--tx', `${Math.round(unify(e).clientX - x0)}px`);
+//   }
+// }
+
+// _c.addEventListener('touchstart', lock, false);
+
+// _c.addEventListener('touchmove', e => e.preventDefault(), false);
+// _c.addEventListener('touchmove', drag, false);
+// _c.addEventListener('touchmove', drag, false);
+
+// _c.addEventListener('touchend', move, false);

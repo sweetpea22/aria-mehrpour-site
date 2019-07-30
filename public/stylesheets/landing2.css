@@ -11,7 +11,6 @@ html {
 }
 
 body,
-header,
 .brand,
 section {
   display: -webkit-box;
@@ -21,13 +20,13 @@ section {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0 auto;
 }
 
 header {
   font-family: "Inconsolata";
   font-weight: lighter;
   letter-spacing: 1.3px;
+  width: 100%;
 }
 
 a {
@@ -40,16 +39,26 @@ header .brand {
   font-size: 24px;
   font-weight: bold;
   color: black;
+  width: 90vw;
+  position: absolute;
+  left: 5%;
 }
 
 header .nav-link {
   padding: 10px;
   background-color: black;
   color: #fff;
+  transition: all 0.3s ease-in;
+}
+
+header .nav-link:hover {
+  background-color: #fffe5f;
+  color: #000;
 }
 
 .nav-container {
-  margin: 0 auto;
+  position: absolute;
+  top: 6.5%;
   padding-bottom: 5%;
 }
 
@@ -95,11 +104,12 @@ header .nav-link {
 
 /** bottom panel  **/
 .btm-panel {
+  box-sizing: border-box;
   display: flex;
   display: -webkit-box;
   display: -ms-flexbox;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
   background-color: black;
   padding: 2rem 2rem;
   font-family: "Inconsolata", sans-serif;
@@ -108,6 +118,7 @@ header .nav-link {
 .btm-panel h3 {
   color: white;
 }
+
 .btm-panel p,
 label {
   font-size: 16px;
@@ -121,6 +132,7 @@ label {
   color: #fffe88;
   letter-spacing: 1px;
   line-height: 24px;
+  width: 50%;
 }
 
 .btm-panel a:hover {
@@ -140,7 +152,11 @@ label {
   -ms-flex-direction: column;
   flex-direction: column;
   width: 70vw;
-  padding-left: 12rem;
+  padding-left: 10rem;
+}
+
+.col__contact p {
+  width: 500px;
 }
 
 input {
@@ -164,7 +180,9 @@ textarea:focus {
 textarea {
   border: none;
   height: 180px;
-  width: 550px;
+  position: relative;
+  max-width: 500px;
+  width: 475px;
   background: #202020;
   color: white;
   font-family: "Inconsolata", sans-serif;
@@ -202,7 +220,7 @@ label {
   letter-spacing: 2.5px;
   text-align: center;
 }
-@media all and (min-width: 900px) {
+@media all and (min-width: 868px) {
   body {
     margin: 0;
     padding: 0;
@@ -214,6 +232,7 @@ label {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
+    overflow-x: hidden;
   }
 
   header {
@@ -229,9 +248,7 @@ label {
   }
 
   header .brand {
-    margin-left: 1%;
-    margin-top: 5%;
-    margin-bottom: 9%;
+    margin: 5% 0 9% 1%;
   }
 
   header .nav-container {
@@ -243,18 +260,12 @@ label {
     -ms-flex-direction: row;
     flex-direction: row;
     justify-content: flex-end;
-    margin-left: 80%;
+    margin-left: 70%;
   }
 
   header .nav-link {
     margin-right: 7%;
   }
-  header .nav-link:hover {
-    background-color: #fffe5f;
-    color: #000;
-    transition: 0.3s ease-in-out;
-  }
-
   /* photo flow */
 
   h4 {
@@ -310,7 +321,7 @@ label {
 
   .a-13 img {
     top: 1000px;
-    left: 44%;
+    left: 40%;
   }
 
   .a-12 img {
@@ -329,19 +340,30 @@ label {
   .btm-panel {
     position: absolute;
     top: 117rem;
+    width: 100%;
   }
   .success__container {
     padding-right: 3rem;
   }
 }
-@media all and (max-width: 899px) {
+@media all and (max-width: 867px) {
+  body {
+    overflow-x: hidden;
+  }
+  header {
+    margin-bottom: 8rem;
+    margin-top: 3rem;
+  }
   header .brand {
     font-size: 30px;
-    margin-top: 10%;
-    margin-bottom: 11%;
+    width: 80vw;
+    margin-left: 15%;
+  }
+  header .nav-container {
+    margin-left: 25%;
+    margin-top: 28%;
   }
   header .nav-link {
-    margin-top: 15%;
     font-size: 14px;
   }
   a .i {
@@ -388,14 +410,25 @@ label {
     margin-bottom: 1.8rem;
   }
 
+  .col__project:last-child {
+    margin-bottom: 2.5rem;
+  }
+
+  .col__contact p {
+    width: 75vw;
+    margin: 2rem auto;
+  }
+
   textarea {
     width: 80vw;
     height: 325px;
+    font-size: 18px;
   }
 
   .contact__submit {
     width: 80vw;
     text-align: center;
+    font-size: 18px;
   }
 }
 .about__container {
