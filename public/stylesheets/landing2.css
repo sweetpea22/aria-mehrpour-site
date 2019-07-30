@@ -23,6 +23,8 @@ section {
 }
 
 header {
+  display: flex;
+  align-items: center;
   font-family: "Inconsolata";
   font-weight: lighter;
   letter-spacing: 1.3px;
@@ -36,19 +38,20 @@ a {
 header .brand {
   font-family: "Helvetica";
   text-transform: uppercase;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
   color: black;
   width: 90vw;
   position: absolute;
-  left: 5%;
+  left: 7.5%;
 }
 
 header .nav-link {
   padding: 10px;
+  font-size: 14px;
   background-color: black;
   color: #fff;
-  transition: all 0.3s ease-in;
+  transition: all 0.28s ease-in;
 }
 
 header .nav-link:hover {
@@ -58,7 +61,8 @@ header .nav-link:hover {
 
 .nav-container {
   position: absolute;
-  top: 6.5%;
+  left: 2%;
+  margin-top: 5%;
   padding-bottom: 5%;
 }
 

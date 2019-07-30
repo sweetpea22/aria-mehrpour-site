@@ -282,48 +282,56 @@ a {
     overflow-x: hidden;
   }
   .header {
-    top: 12%;
-    text-align: right;
-    width: 90vw;
+    top: 6vh;
+    left: 5%;
+    margin: 0 auto;
+    text-align: center;
+    width: 75vw;
   }
 
   .next_arrow {
     top: 84vh;
-    left: 85vw;
-    height: 4rem;
-    width: 8%;
+    left: 91%;
+    height: 2.5rem;
+    width: 5%;
   }
   .nav__collapse {
-    top: 7vh;
+    top: 55%;
+    left: 0%;
+    transform: rotate(-90deg);
     font-size: 1.2rem;
+    width: 10%;
+    height: 10%;
   }
   div.carousel {
     position: relative;
-    height: 100vh;
-    width: 95vw;
-    margin: 0 auto;
+    height: 80vh;
+    width: 90vw;
+    margin: 10% 0 0 6%;
     padding-left: 0;
   }
   .nav__container {
-    width: 100%;
+    top: 0;
+    left: 10%;
+    width: 50%;
   }
   nav > .sub__nav {
-    top: 44vh;
+    top: 45%;
     padding: 0;
-    left: 2%;
-    width: 100%;
+    left: 50%;
+    width: 50%;
     font-size: 1.5rem;
   }
   nav > .nav__link,
   nav > .nav__link-sub {
-    line-height: 120px;
-    height: 120px;
+    line-height: 130px;
+    height: 130px;
     width: 100%;
     font-size: 32px;
   }
   .img_counter {
-    top: 86vh;
+    top: -10%;
     text-align: center;
-    left: 4%;
+    left: 94%;
   }
 }
