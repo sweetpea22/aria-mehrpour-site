@@ -1,5 +1,6 @@
 const express = require('express'),
   bodyParser = require('body-parser'),
+  nodemailer = require('nodemailer'),
   app = express();
 
 app.set('view engine', 'ejs');
@@ -43,7 +44,27 @@ app.get('/branding-shoots', (req, res) => {
   res.render('more/branding');
 });
 
+app.post('/contact', (req, res) => {
+  const output = `
+  <p>Someone has contacted you via the form on dolo.world</p> 
+  <h3>Contact Details</h3>
+  <ul>
+  <li> Name: ${req.body.contact__name}</li>
+  <li> Email: ${req.body.contact__email}</li>
+  </ul>
+  <p>${req.body.contact__body}</p>
+  `;
+
+  async function main() {
+
+  }
+  main().then()
+  main().catch(console.log(err))
+});
+
 const port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log('serving on port 3000');
 })
+
+// handle env stuff.
