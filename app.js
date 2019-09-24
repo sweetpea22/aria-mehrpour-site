@@ -1,6 +1,7 @@
 const express = require('express'),
   bodyParser = require('body-parser'),
   nodemailer = require('nodemailer'),
+  dotenv = require('dotenv').config(),
   app = express();
 
 app.set('view engine', 'ejs');
@@ -45,26 +46,44 @@ app.get('/branding-shoots', (req, res) => {
 });
 
 app.post('/contact', (req, res) => {
-  const output = `
-  <p>Someone has contacted you via the form on dolo.world</p> 
-  <h3>Contact Details</h3>
-  <ul>
-  <li> Name: ${req.body.contact__name}</li>
-  <li> Email: ${req.body.contact__email}</li>
-  </ul>
-  <p>${req.body.contact__body}</p>
-  `;
+  let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      type: "OAuth2",
+      user: process.env.GMAIL_USER,
+      clientId: process.env.GMAIL_CLIENTID,
+      clientSecret: process.env.GMAIL_CLIENTSECRET,
+      refreshToken: process.env.GMAIL_REFRESHTOKEN,
+      accessToken: process.env.GMAIL_ACCESSTOKEN
+    }
+  })
 
-  async function main() {
-
+  let mailOpts = {
+    from: "Dolo.world Form nocturne8998@gmail.com",
+    to: "Aria Mehrpour Site nocturne8998@gmail.com",
+    subject: "Contact Request via Website Form",
+    text: `${req.body.contact__name} would like to get in touch with you. The email address they left is ${req.body.contact__email}. 
+    Message: ${req.body.contact__body}
+    `,
+    html: "hello"
   }
-  main().then()
-  main().catch(console.log(err))
+  transporter.sendMail(mailOpts, (err, info) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect('contact-success');
+      console.log("info.messageId: " + info.messageId);
+      console.log("info.envelope: " + info.envelope);
+      console.log("info.accepted: " + info.accepted);
+      console.log("info.rejected: " + info.rejected);
+      console.log("info.pending: " + info.pending);
+      console.log("info.response: " + info.response);
+    }
+    transporter.close();
+  });
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, function () {
-  console.log('serving on port 3000');
-})
-
-// handle env stuff.
+app.listen(port, () => console.log('serving on port 3000'));
