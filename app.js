@@ -17,6 +17,7 @@ app.post('/contact', urlencodedParser, (req, res) => {
   if (req.body.contact__body === ' ' || req.body.contact__email === '' || req.body === null) {
     res.send('Invalid form input.');
   } else {
+    res.render('contact-success', { data: req.body });
     let transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 465,
@@ -50,7 +51,6 @@ app.post('/contact', urlencodedParser, (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        res.render('contact-success', { data: req.body });
         console.log("info.messageId: " + info.messageId);
         console.log("info.accepted: " + info.accepted);
         console.log("info.rejected: " + info.rejected);
